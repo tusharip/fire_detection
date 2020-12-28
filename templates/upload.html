@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FIRE</title>
+    </head>
+  
+<style>
+    div {
+        display: inline-block;
+        width: 49%;
+      }
+      img {
+          height: 60%;
+        width: 100%;
+      }
+      div::after {
+        content: '~'; /* in absence of caption the block will be sustained */
+        display: block;
+        color: #fff;
+        background: #1f4056;
+        text-align: center;
+        margin: 2px auto;
+        line-height: 1.8em;    /* puts some darkspace under the g */
+      }
+      div:first-child::after {
+        content: "uploaded";
+      }
+      div:last-child::after {
+        content: "predicted";
+      }
+      </style>
+      </head>
+      <body>
+      <div><img src={{img1}}></div>
+      <div><img src={{img2}}></div>
+      </body>
+      </html>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FIRE</title>
+    </head>
+    <body>
+    <h1>Fire Detection</h1>
+ 
+    
+    <form action='.' method='POST'enctype="multipart/form-data">
+        <div>
+            <label>Upload Test Image</label>
+            <input type="file" name="image" id="file-selector" accept=".jpg, .jpeg, .png">
+        </div>
+        <input type='submit' name="btn" value='Submit' />
+        
+    </form>
+    <script>
+        const fileSelector = document.getElementById('file-selector');
+        fileSelector.addEventListener('change', (event) => {
+          const fileList = event.target.files;
+          console.log(fileList);
+        });
+      </script> 
+    </body>
+
+</html>
