@@ -8,7 +8,7 @@ import cv2
 from utils import nms
 #from werkzeug import secure_filename
 
-app=Flask(__name__)
+app=Flask(__name__,template_folder='templates')
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 UPLOAD_FOLDER="./static"
 app.config['UPLOAD_FOLDER']=UPLOAD_FOLDER
