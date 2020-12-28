@@ -5,8 +5,7 @@ from torch.nn import functional as F
 import torch.optim as optim
 
 
-import cv2
-import matplotlib.pyplot as plt
+
 
 
 S=7 #final grid
@@ -48,16 +47,5 @@ class  resnet(nn.Module):
         return  x
 
 
-if __name__ == "__main__":
-    model = models.resnet50(pretrained=True).to(device)
 
-    inp=torch.randn((2,3,448,448))
-
-    resnet50=resnet(model)
-    out=resnet50(inp)
-    print(out.shape)
-
-
-
-    pass
 
