@@ -15,7 +15,7 @@ app.config['UPLOAD_FOLDER']=UPLOAD_FOLDER
 
 
 
-model_path=os.path.join(app.config["UPLOAD_FOLDER"],"parameters.pb")
+#model_path=os.path.join(app.config["UPLOAD_FOLDER"],"parameters.pb")
 with torch.no_grad():
     model=resnet()
 
