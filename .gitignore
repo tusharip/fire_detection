@@ -1,1 +1,7 @@
+yoloresnet/
+utils/
+ProcFile/
+__pycache__/
+static/
+templates/
 
