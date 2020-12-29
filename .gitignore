@@ -4,4 +4,6 @@ ProcFile/
 __pycache__/
 static/
 templates/
+opencv-files/
+runtime/
 
