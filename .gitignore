@@ -1,9 +1,3 @@
-yoloresnet/
-utils/
-ProcFile/
-__pycache__/
-static/
-templates/
-opencv-files/
-runtime/
+composer.phar
+/vendor/
 
