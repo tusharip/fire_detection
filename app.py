@@ -98,7 +98,7 @@ def home():
 
 
 @app.route('/mobile',methods=['GET','POST'])
-def home():
+def mobile():
     if flask.request.method =="GET":
         return render_template("index.html")
     else:
