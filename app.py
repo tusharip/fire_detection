@@ -5,6 +5,7 @@ import flask
 from flask import Flask,request,jsonify,url_for,render_template
 import torch
 import cv2
+import base64
 from utils import nms
 #from werkzeug import secure_filename
 
