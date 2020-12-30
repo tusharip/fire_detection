@@ -96,7 +96,34 @@ def home():
         return render_template("upload.html",img1=inp_path,img2=pred_path)
 
 
+@app.route('/mobile',methods=['GET','POST'])
+def home():
+    if flask.request.method =="GET":
+        return render_template("index.html")
+    else:
+        print(request.files)
+        f=request.files["image"]
+        path=os.path.join(app.config["UPLOAD_FOLDER"],f.filename)
 
+        f.save(path)
+
+        input_img=cv2.imread(path)
+        input_img=cv2.resize(input_img,(448,448),interpolation=cv2.INTER_CUBIC)
+        inp_path=os.path.join(app.config["UPLOAD_FOLDER"],"inp.png")
+        cv2.imwrite(inp_path,input_img)
+
+        pred_path=os.path.join(app.config["UPLOAD_FOLDER"],"pred.png")
+        predict(input_img,pred_path)
+
+        pred_path="./static/pred.png"
+
+
+        
+        img = cv2.imread(pred_path) # reads the PIL image
+        retval, buffer = cv2.imencode('.jpg', img)
+        retval=None
+        img_base64 = base64.b64encode(buffer)
+        return img_base64
 
 if __name__ == "__main__":
     print("app started")
