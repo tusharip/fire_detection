@@ -117,11 +117,9 @@ def mobile():
         predict(input_img,pred_path)
 
         
-        img = cv2.imread(pred_path) # reads the PIL image
-        retval, buffer = cv2.imencode('.jpg', img)
-        retval=None
-        img_base64 = base64.b64encode(buffer)
-        return img_base64
+        with open(pred_path, "rb") as f:
+            return base64.b64encode(f.read())
+        
 
 if __name__ == "__main__":
     print("app started")
