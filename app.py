@@ -79,8 +79,10 @@ def home():
     if flask.request.method =="GET":
         return render_template("index.html")
     else:
-        f=request.files["image"]
-        path=os.path.join(app.config["UPLOAD_FOLDER"],f.filename)
+       
+        f = request.files["image"]
+        fmat =f.filename.split('.')[-1]
+        path = f'./static/img.{fmat}'
 
         f.save(path)
 
@@ -89,11 +91,9 @@ def home():
         inp_path=os.path.join(app.config["UPLOAD_FOLDER"],"inp.png")
         cv2.imwrite(inp_path,input_img)
 
-        pred_path=os.path.join(app.config["UPLOAD_FOLDER"],"pred.png")
+        pred_path=f'./static/pred.png'
+        
         predict(input_img,pred_path)
-
-        pred_path="./static/pred.png"
-
         return render_template("upload.html",img1=inp_path,img2=pred_path)
 
 
@@ -102,10 +102,10 @@ def mobile():
     if flask.request.method =="GET":
         return render_template("index.html")
     else:
-        print(request.files)
-        f=request.files["image"]
-        path=os.path.join(app.config["UPLOAD_FOLDER"],f.filename)
-
+      
+        f = request.files["image"]
+        fmat =f.filename.split('.')[-1]
+        path1 = f'./static/img.{fmat}'
         f.save(path)
 
         input_img=cv2.imread(path)
@@ -113,11 +113,8 @@ def mobile():
         inp_path=os.path.join(app.config["UPLOAD_FOLDER"],"inp.png")
         cv2.imwrite(inp_path,input_img)
 
-        pred_path=os.path.join(app.config["UPLOAD_FOLDER"],"pred.png")
+        pred_path=f'./static/pred.png'
         predict(input_img,pred_path)
-
-        pred_path="./static/pred.png"
-
 
         
         img = cv2.imread(pred_path) # reads the PIL image
