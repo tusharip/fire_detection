@@ -38,7 +38,7 @@ class  resnet(nn.Module):
                             nn.Linear(496,S*S*E)
                             
                         ).to(device)
-        print( self.resnet_model)
+#         print( self.resnet_model)
 
     def forward(self,x):
         x=F.interpolate(x,scale_factor=0.5,recompute_scale_factor=True)
