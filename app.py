@@ -18,7 +18,7 @@ app.config['UPLOAD_FOLDER']=UPLOAD_FOLDER
 
 torch.hub.download_url_to_file('https://www.dropbox.com/s/i6tflgvvdgoqbu6/parameters.pb?dl=1', './weight.pb')
 model=resnet()
-model.load_state_dict(torch.load('./weight.pt'))
+model.load_state_dict(torch.load('./weight.pb'))
 model.eval()
 
 
