@@ -4,15 +4,30 @@
         <title>FIRE</title>
     </head>
     <body>
-    <h1>Fire Detection</h1>
+        <style type='text/css'>
+            body {
+              background-color: black
+            }
+            
+            h1 {
+              color: red;
+            }
+            
+          </style>
+    </div>
+    <div style="text-align:center">
+        <h1>Fire Detection</h1>
+    </div>  
  
     
     <form action='.' method='POST'enctype="multipart/form-data">
-        <div>
-            <label>Upload Test Image</label>
+        <br>
+        <br>
+        <div style="text-align:center">
             <input type="file" name="image" id="file-selector" accept=".jpg, .jpeg, .png">
-        </div>
-        <input type='submit' name="btn" value='Submit' />
+
+        <input type='submit' name="btn" value='Submit' style="height:25px; width:100px"  />
+        </div>  
         
     </form>
     <script>
