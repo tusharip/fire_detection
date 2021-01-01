@@ -16,9 +16,11 @@ app.config['UPLOAD_FOLDER']=UPLOAD_FOLDER
 
 
 
-#model_path=os.path.join(app.config["UPLOAD_FOLDER"],"parameters.pb")
-with torch.no_grad():
-    model=resnet()
+torch.hub.download_url_to_file('https://www.dropbox.com/s/i6tflgvvdgoqbu6/parameters.pb?dl=1', './weight.pb')
+model=resnet()
+model.load_state_dict(torch.load('./weight.pt'))
+model.eval()
+
 
       
 @app.after_request
