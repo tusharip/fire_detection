@@ -4,6 +4,11 @@
         <title>FIRE</title>
     </head>
     <body>
+        ​#button{
+            position: relative;
+            left:-1px;
+            background-color:#446655;
+            }​
         <style type='text/css'>
             body {
               background-color: black
@@ -13,18 +18,26 @@
               color: red;
             }
             
+            
           </style>
     </div>
     <div style="text-align:center">
         <h1>Fire Detection</h1>
     </div>  
+
+  
  
     
     <form action='.' method='POST'enctype="multipart/form-data">
         <br>
         <br>
         <div style="text-align:center">
-            <input type="file" name="image" id="file-selector" accept=".jpg, .jpeg, .png">
+            <input type="text" id="fileName" readonly="readonly" >
+             <div class="file_input_div" style="display: inline;">
+             <input type="button" id="button" value="Open"/>
+             <input type="file" name="image" id="file-selector" accept=".jpg, .jpeg, .png" style="opacity:0; position:relative; left:-40px;"  onchange="javascript: document.getElementById ('fileName') . value = this.value"/>
+    
+
 
         <input type='submit' name="btn" value='Submit' style="height:25px; width:100px"  />
         </div>  
