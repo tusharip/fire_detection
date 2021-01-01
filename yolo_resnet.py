@@ -19,7 +19,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
 class  resnet(nn.Module):
-    def __init__(self,model=models.resnet50(pretrained=True).to(device)):
+    def __init__(self,model=models.resnet50(pretrained=False).to(device)):
 
         super().__init__()
         self.resnet_model=model
